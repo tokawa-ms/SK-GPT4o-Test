@@ -16,7 +16,9 @@ namespace SK_GPT4o_Test
             string? deployName = configuration["DeployName"];
             string? apiKey = configuration["ApiKey"];
 
-            if (endpoint is null || deployName is null || apiKey is null)
+            if (String.IsNullOrEmpty(endpoint) || 
+                String.IsNullOrEmpty(deployName) || 
+                String.IsNullOrEmpty(apiKey))
             {
                 Console.WriteLine("Please set Azure OpenAI credentials in appsettings.json.");
 
